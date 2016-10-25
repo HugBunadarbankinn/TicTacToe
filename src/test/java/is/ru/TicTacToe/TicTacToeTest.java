@@ -53,5 +53,13 @@ public class TicTacToeTest {
         board.board[0][1] = 'X';
 		assertEquals(false, game.isSlotFree(0,1));
 	}
+
+	@Test
+	public void testCheckWinner() {
+        board.board[0][0] = 'X';
+        board.board[0][1] = 'X';
+        board.board[0][2] = 'X';
+		assertEquals(true, game.checkWinner());
+	}
     
 }
