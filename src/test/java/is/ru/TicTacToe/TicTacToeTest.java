@@ -8,13 +8,13 @@ public class TicTacToeTest {
     GameBoard  board =  new GameBoard();
     PlayGame game = new PlayGame();
 
+
     @Test 
     public void testBoard(){
 
         char[] row = new char[3];
 
-        for(int i = 0; i < 3; i++)
-        {
+        for(int i = 0; i < 3; i++){
             row[i] = '-';
         } 
 
@@ -22,21 +22,17 @@ public class TicTacToeTest {
         char[] table1 = new char[3];
         char[] table2 = new char[3];
 
-        for(int i = 0; i < 3; i++)
-        {
+        for(int i = 0; i < 3; i++){
             table0[i] = board.board[0][i];
         } 
 
-        for(int i = 0; i < 3; i++)
-        {
+        for(int i = 0; i < 3; i++){
             table1[i] = board.board[1][i];
         } 
 
-        for(int i = 0; i < 3; i++)
-        {
+        for(int i = 0; i < 3; i++){
             table2[i] = board.board[2][i];
         } 
-
 
         Arrays.equals(row, table0);
         Arrays.equals(row, table1);
@@ -44,13 +40,23 @@ public class TicTacToeTest {
     }
 
     @Test
-	public void testValidNumber() {
+	public void testTooHighNumber() {
 		assertEquals(false, game.isValidNumber(10));
 	}
 
+    @Test
+    public void testTooLowNumber() {
+        assertEquals(false, game.isValidNumber(-1));
+    }
+
+    @Test
+    public void testValidNumber() {
+        assertEquals(true, game.isValidNumber(5));
+    }
+
 	@Test
-	public void testSlotFree() {
-        board.board[0][1] = 'X';
+	public void testSlotNotFree() {
+        game.board.board[0][1] = 'X';
 		assertEquals(false, game.isSlotFree(0,1));
 	}
 
@@ -61,5 +67,9 @@ public class TicTacToeTest {
         board.board[0][2] = 'X';
 		assertEquals(true, game.checkWinner());
 	}
-    
+    @Test
+    public void testSlotFree() {
+        game.board.board[0][1] = '-';
+        assertEquals(true, game.isSlotFree(1,1));
+    }   
 }
