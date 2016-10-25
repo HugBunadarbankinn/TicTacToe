@@ -61,5 +61,15 @@ public class TicTacToeTest {
         board.board[0][2] = 'X';
 		assertEquals(true, game.checkWinner());
 	}
+
+    @Test
+    public void testChangePlayer() {
+        currentPlayerMark == 'X';
+        changePlayer();
+        if(currentPlayerMark == 'O') {
+            return true;
+        }
+        return false;
+
     
 }
