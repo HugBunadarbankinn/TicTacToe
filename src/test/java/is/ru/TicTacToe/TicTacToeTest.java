@@ -53,5 +53,27 @@ public class TicTacToeTest {
         board.board[0][1] = 'X';
 		assertEquals(false, game.isSlotFree(0,1));
 	}
+
+    @Test
+    public void testIsFull() {
+        for (int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                board.board[i][j] = 'X';
+            }
+        }
+        assertEquals(true, game.isFull());
+    }
+
+    /*@Test
+    public void testIsNotFull() {
+        for (int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                game.board.board[i][j] = '-';
+            }
+        }
+
+        assertEquals(false, game.isFull());
+    }*/
+
     
 }
