@@ -64,16 +64,17 @@ public class TicTacToeTest {
         assertEquals(true, game.isFull());
     }
 
-    /*@Test
+    @Test
     public void testIsNotFull() {
-        for (int i = 0; i < 3; i++){
+        /*for (int i = 0; i < 3; i++){
             for(int j = 0; j < 3; j++){
                 game.board.board[i][j] = '-';
             }
-        }
+        }*/
+        game.board.board[0][1] = '-';
 
         assertEquals(false, game.isFull());
-    }*/
+    }
 
     
 }
