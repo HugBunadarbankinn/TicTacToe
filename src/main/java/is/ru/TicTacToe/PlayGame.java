@@ -41,7 +41,7 @@ public class PlayGame {
 
     protected boolean checkLine(char a, char b, char c)
     {
-        return ((a != '-') && (a == b) && (b == c));
+        return ((a != '-') && (a == b) && (b == c)); 
     }
 
 }
