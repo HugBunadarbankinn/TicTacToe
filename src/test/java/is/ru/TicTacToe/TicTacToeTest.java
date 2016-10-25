@@ -5,9 +5,11 @@ import java.util.Arrays;
 import org.junit.Test;
 
 public class TicTacToeTest {
+    GameBoard  board =  new GameBoard();
+    PlayGame game = new PlayGame();
+
     @Test 
     public void testBoard(){
-        GameBoard  board =  new GameBoard();
 
         char[] row = new char[3];
 
@@ -41,16 +43,15 @@ public class TicTacToeTest {
         Arrays.equals(row, table2);
     }
 
-    @test
+    @Test
 	public void testValidNumber() {
-		assertEquals(false, PlayGame.addMark(10));
+		assertEquals(false, game.isValidNumber(10));
 	}
 
-	@test
+	@Test
 	public void testSlotFree() {
-		if(board[9] == 'O' || board[9] == 'X') {
-			assertEquals(false, PlayGame.addMark(9));
-		}
-		assertEquals(true, PlayGame.addMark(9));
+        board.board[0][1] = 'X';
+		assertEquals(false, game.isSlotFree(0,1));
 	}
+    
 }
