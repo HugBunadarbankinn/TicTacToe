@@ -1,7 +1,11 @@
 package is.ru.TicTacToe;
 
 public class PlayGame {
-    private GameBoard board = new GameBoard();
+    protected GameBoard board = new GameBoard();
+
+    public PlayGame() {
+        board.initializeBoard();
+    }
 
     protected boolean isValidNumber(int num){
         if(num <= 0 || num > 9 )
@@ -30,7 +34,7 @@ public class PlayGame {
             {
                 return true;
             }
-            else if((checkLine(board.board[0][1], board.board[1][1], board.board[2][2]) == true) ||
+            else if((checkLine(board.board[0][0], board.board[1][1], board.board[2][2]) == true) ||
                     (checkLine(board.board[0][2], board.board[1][1], board.board[2][0]) == true))
             {
                 return true;
@@ -41,7 +45,13 @@ public class PlayGame {
 
     protected boolean checkLine(char a, char b, char c)
     {
-        return ((a != '-') && (a == b) && (b == c)); 
+        if ((a == '-') || (b == '-') || (c == '-'))
+            return false;
+        else if((a == b) && (b == c))
+            return true;
+
+
+        return false;
     }
 
 }

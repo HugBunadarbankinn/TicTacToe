@@ -5,7 +5,7 @@ import java.util.Arrays;
 import org.junit.Test;
 
 public class TicTacToeTest {
-    GameBoard  board =  new GameBoard();
+   //GameBoard  board =  new GameBoard();
     PlayGame game = new PlayGame();
 
     @Test 
@@ -24,17 +24,17 @@ public class TicTacToeTest {
 
         for(int i = 0; i < 3; i++)
         {
-            table0[i] = board.board[0][i];
+            table0[i] = game.board.board[0][i];
         } 
 
         for(int i = 0; i < 3; i++)
         {
-            table1[i] = board.board[1][i];
+            table1[i] = game.board.board[1][i];
         } 
 
         for(int i = 0; i < 3; i++)
         {
-            table2[i] = board.board[2][i];
+            table2[i] = game.board.board[2][i];
         } 
 
 
@@ -50,16 +50,38 @@ public class TicTacToeTest {
 
 	@Test
 	public void testSlotFree() {
-        board.board[0][1] = 'X';
+        game.board.board[0][1] = 'X';
 		assertEquals(false, game.isSlotFree(0,1));
 	}
 
+    @Test
+    public void testSlotFree2() {
+        game.board.board[0][1] = '-';
+        assertEquals(true, game.isSlotFree(0,1));
+    }
+
 	@Test
-	public void testCheckWinner() {
-        board.board[0][0] = 'X';
-        board.board[0][1] = 'X';
-        board.board[0][2] = 'X';
-		assertEquals(true, game.checkWinner());
+	public void testCheckWinnerA() {
+        game.board.board[0][0] = 'X';
+        game.board.board[0][1] = 'O';
+        game.board.board[0][2] = 'O';
+		assertEquals(false, game.checkWinner());
 	}
+
+    @Test
+    public void testCheckWinnerB() {
+        game.board.board[0][0] = 'O';
+        game.board.board[0][1] = 'O';
+        game.board.board[0][2] = 'O';
+        assertEquals(true, game.checkWinner());
+    }
+
+    @Test
+    public void testCheckWinnerC() {
+        game.board.board[0][0] = 'X';
+        game.board.board[1][1] = 'X';
+        game.board.board[2][2] = 'X';
+        assertEquals(true, game.checkWinner());
+    }
     
 }
