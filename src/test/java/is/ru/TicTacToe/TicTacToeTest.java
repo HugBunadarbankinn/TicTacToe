@@ -39,7 +39,18 @@ public class TicTacToeTest {
         Arrays.equals(row, table0);
         Arrays.equals(row, table1);
         Arrays.equals(row, table2);
-
     }
 
+    @test
+	public void testValidNumber() {
+		assertEquals(false, PlayGame.addMark(10));
+	}
+
+	@test
+	public void testSlotFree() {
+		if(board[9] == 'O' || board[9] == 'X') {
+			assertEquals(false, PlayGame.addMark(9));
+		}
+		assertEquals(true, PlayGame.addMark(9));
+	}
 }
