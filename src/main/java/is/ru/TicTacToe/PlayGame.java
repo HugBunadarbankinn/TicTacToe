@@ -1,11 +1,55 @@
 package is.ru.TicTacToe;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
 public class PlayGame {
     protected GameBoard board = new GameBoard();
+
+    private final int [][] MARK = {{1,2,3}, {4,5,6}, {7,8,9}};
     protected char currentPlayerMark;
 
     public PlayGame() {
+        currentPlayerMark = 'X';
         board.initializeBoard();
+        board.printBoard();
+    }
+
+    public void makePlay() {
+        BufferedReader readInput = new BufferedReader(new InputStreamReader(System.in));
+        int slot = 0;
+        try {
+            String s = readInput.readLine();
+            slot = Integer.valueOf(s);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        if(!isValidNumber(slot)) {
+            System.out.println("Not a valid slot!");
+        }
+        else {
+            makeMark(slot);
+            changePlayer();
+        }
+
+        board.printBoard();
+    }
+    
+    protected void makeMark(int slot){
+        for (int col = 0; col < 3; col++){
+            for (int row = 0; row < 3; row++){
+                if(slot == MARK[col][row]){
+                    if(isSlotFree(col,row)){
+                        board.board[col][row] = currentPlayerMark;
+                    }
+                    else {
+                        System.out.println("Slot is not free");
+                    }
+                }
+            }
+        }
     }
     
     protected boolean isValidNumber(int num){

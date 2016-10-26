@@ -132,11 +132,26 @@ public class TicTacToeTest {
     }
 
     @Test
+    public void testMakeMark(){
+        char mark = game.currentPlayerMark;
+        game.makeMark(3);
+
+        assertEquals(mark, game.board.board[0][2]);
+    }
+
+    @Test
+    public void testMakeMark2(){
+        game.changePlayer();
+        char mark = game.currentPlayerMark;
+        game.makeMark(6);
+
+        assertEquals(mark, game.board.board[1][2]);
+    }
+    
     public void testChangePlayer() {
         game.currentPlayerMark = 'X';
         game.changePlayer();
         assertEquals('O', game.currentPlayerMark);
     } 
-
 
 }
