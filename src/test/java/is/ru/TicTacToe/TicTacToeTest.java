@@ -148,6 +148,7 @@ public class TicTacToeTest {
         assertEquals(mark, game.board.board[1][2]);
     }
     
+    @Test
     public void testChangePlayer() {
         game.currentPlayerMark = 'X';
         game.changePlayer();
