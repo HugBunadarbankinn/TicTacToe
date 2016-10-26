@@ -2,13 +2,11 @@ package is.ru.TicTacToe;
 
 public class PlayGame {
     protected GameBoard board = new GameBoard();
-<<<<<<< HEAD
-=======
+
 
     public PlayGame() {
         board.initializeBoard();
     }
->>>>>>> origin/CheckWinner
 
     protected boolean isValidNumber(int num){
         if(num <= 0 || num > 9 ){

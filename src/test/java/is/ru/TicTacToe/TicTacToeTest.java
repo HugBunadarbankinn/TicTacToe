@@ -22,18 +22,17 @@ public class TicTacToeTest {
         char[] table1 = new char[3];
         char[] table2 = new char[3];
 
-<<<<<<< HEAD
         for(int i = 0; i < 3; i++){
-            table0[i] = board.board[0][i];
+            table0[i] = game.board.board[0][i];
         } 
 
         for(int i = 0; i < 3; i++){
-            table1[i] = board.board[1][i];
+            table1[i] = game.board.board[1][i];
         } 
 
         for(int i = 0; i < 3; i++){
-            table2[i] = board.board[2][i];
-=======
+            table2[i] = game.board.board[2][i];
+        }
         for(int i = 0; i < 3; i++)
         {
             table0[i] = game.board.board[0][i];
@@ -47,7 +46,6 @@ public class TicTacToeTest {
         for(int i = 0; i < 3; i++)
         {
             table2[i] = game.board.board[2][i];
->>>>>>> origin/CheckWinner
         } 
 
         Arrays.equals(row, table0);
@@ -71,11 +69,7 @@ public class TicTacToeTest {
     }
 
 	@Test
-<<<<<<< HEAD
-	public void testSlotNotFree() {
-=======
-	public void testSlotFree() {
->>>>>>> origin/CheckWinner
+	public void testSlotFree1() {
         game.board.board[0][1] = 'X';
 		assertEquals(false, game.isSlotFree(0,1));
 	}
@@ -93,14 +87,11 @@ public class TicTacToeTest {
         game.board.board[0][2] = 'O';
 		assertEquals(false, game.checkWinner());
 	}
-<<<<<<< HEAD
     @Test
     public void testSlotFree() {
         game.board.board[0][1] = '-';
         assertEquals(true, game.isSlotFree(1,1));
     }   
-}
-=======
 
     @Test
     public void testCheckWinnerB() {
@@ -119,4 +110,3 @@ public class TicTacToeTest {
     }
     
 }
->>>>>>> origin/CheckWinner
