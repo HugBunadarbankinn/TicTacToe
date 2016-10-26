@@ -5,7 +5,6 @@ import java.util.Arrays;
 import org.junit.Test;
 
 public class TicTacToeTest {
-   //GameBoard  board =  new GameBoard();
     PlayGame game = new PlayGame();
 
 
@@ -75,6 +74,28 @@ public class TicTacToeTest {
 	}
 
     @Test
+
+    public void testIsFull() {
+        for (int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                game.board.board[i][j] = 'X';
+            }
+        }
+        assertEquals(true, game.isFull());
+    }
+
+    @Test
+    public void testIsNotFull() {
+        for (int i = 0; i < 3; i++){
+            for(int j = 0; j < 3; j++){
+                game.board.board[i][j] = '-';
+            }
+        }
+        game.board.board[0][1] = '-';
+
+        assertEquals(false, game.isFull());
+    }
+
     public void testSlotFree2() {
         game.board.board[0][1] = '-';
         assertEquals(true, game.isSlotFree(0,1));
@@ -108,5 +129,4 @@ public class TicTacToeTest {
         game.board.board[2][2] = 'X';
         assertEquals(true, game.checkWinner());
     }
-    
 }
