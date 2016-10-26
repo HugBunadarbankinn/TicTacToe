@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.TicTacToe.TicTacToeTest" tests="12" skipped="0" failures="0" errors="0" timestamp="2016-10-26T12:29:41" hostname="Toshiba" time="0.016">
+<testsuite name="is.ru.TicTacToe.TicTacToeTest" tests="13" skipped="0" failures="0" errors="0" timestamp="2016-10-26T13:05:35" hostname="Notandi-PC" time="0.036">
   <properties/>
-  <testcase name="testCheckWinnerA" classname="is.ru.TicTacToe.TicTacToeTest" time="0.001"/>
+  <testcase name="testIsNotFull" classname="is.ru.TicTacToe.TicTacToeTest" time="0.002"/>
+  <testcase name="testCheckWinnerA" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
   <testcase name="testCheckWinnerB" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
   <testcase name="testCheckWinnerC" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
   <testcase name="testBoard" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
@@ -9,11 +10,18 @@
   <testcase name="testSlotFree" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
   <testcase name="testMakeMark" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
   <testcase name="testSlotFree1" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
-  <testcase name="testSlotFree2" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
-  <testcase name="testTooLowNumber" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
-  <testcase name="testValidNumber" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
+  <testcase name="testIsFull" classname="is.ru.TicTacToe.TicTacToeTest" time="0.002"/>
+  <testcase name="testTooLowNumber" classname="is.ru.TicTacToe.TicTacToeTest" time="0.001"/>
+  <testcase name="testValidNumber" classname="is.ru.TicTacToe.TicTacToeTest" time="0.001"/>
   <testcase name="testMakeMark2" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
   <system-out><![CDATA[-------------
+| - | - | - | 
+-------------
+| - | - | - | 
+-------------
+| - | - | - | 
+-------------
+-------------
 | - | - | - | 
 -------------
 | - | - | - | 

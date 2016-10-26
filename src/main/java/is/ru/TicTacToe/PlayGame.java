@@ -6,9 +6,9 @@ import java.io.InputStreamReader;
 
 public class PlayGame {
     protected GameBoard board = new GameBoard();
+
     private final int [][] MARK = {{1,2,3}, {4,5,6}, {7,8,9}};
     protected char currentPlayerMark;
-
 
     public PlayGame() {
         currentPlayerMark = 'X';
@@ -51,7 +51,7 @@ public class PlayGame {
             }
         }
     }
-
+    
     protected boolean isValidNumber(int num){
         if(num <= 0 || num > 9 ){
             return false;
@@ -85,6 +85,18 @@ public class PlayGame {
         }
         return false;
     }
+
+    protected boolean isFull()
+    {
+        if((board.board[0][0] == '-') || (board.board[0][1] == '-') || (board.board[0][2] == '-') ||
+           (board.board[1][0] == '-') || (board.board[1][1] == '-') || (board.board[1][2] == '-') ||
+           (board.board[2][0] == '-') || (board.board[2][1] == '-') || (board.board[2][2] == '-')){
+            return false;
+        }
+
+        return true;
+    }
+
 
     protected boolean checkLine(char a, char b, char c)
     {
