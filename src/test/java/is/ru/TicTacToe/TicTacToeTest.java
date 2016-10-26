@@ -108,5 +108,23 @@ public class TicTacToeTest {
         game.board.board[2][2] = 'X';
         assertEquals(true, game.checkWinner());
     }
+
+    @Test
+    public void testMakeMark(){
+        char mark = game.currentPlayerMark;
+        game.makeMark(3);
+
+        assertEquals(mark, game.board.board[0][2]);
+    }
+
+    @Test
+    public void testMakeMark2(){
+        game.changePlayer();
+        char mark = game.currentPlayerMark;
+        game.makeMark(6);
+
+        assertEquals(mark, game.board.board[1][2]);
+    }
     
+
 }
