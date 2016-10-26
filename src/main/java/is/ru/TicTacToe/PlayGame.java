@@ -2,11 +2,12 @@ package is.ru.TicTacToe;
 
 public class PlayGame {
     protected GameBoard board = new GameBoard();
+    protected char currentPlayerMark;
 
     public PlayGame() {
         board.initializeBoard();
     }
-
+    
     protected boolean isValidNumber(int num){
         if(num <= 0 || num > 9 ){
             return false;
@@ -62,6 +63,11 @@ public class PlayGame {
 
 
         return false;
+    }
+
+    void changePlayer()
+    {
+        currentPlayerMark = (currentPlayerMark == 'X' ? 'O' : 'X');
     }
 
 }

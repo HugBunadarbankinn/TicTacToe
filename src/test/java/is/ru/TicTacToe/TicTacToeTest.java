@@ -96,23 +96,24 @@ public class TicTacToeTest {
         assertEquals(false, game.isFull());
     }
 
+    @Test
+    public void testSlotFree() {
+        game.board.board[0][1] = '-';
+        assertEquals(true, game.isSlotFree(1,1));
+    }  
+
     public void testSlotFree2() {
         game.board.board[0][1] = '-';
         assertEquals(true, game.isSlotFree(0,1));
     }
 
 	@Test
-	public void testCheckWinnerA() {
+    public void testCheckWinnerA() {
         game.board.board[0][0] = 'X';
         game.board.board[0][1] = 'O';
         game.board.board[0][2] = 'O';
-		assertEquals(false, game.checkWinner());
-	}
-    @Test
-    public void testSlotFree() {
-        game.board.board[0][1] = '-';
-        assertEquals(true, game.isSlotFree(1,1));
-    }   
+        assertEquals(false, game.checkWinner());
+    }
 
     @Test
     public void testCheckWinnerB() {
@@ -129,4 +130,13 @@ public class TicTacToeTest {
         game.board.board[2][2] = 'X';
         assertEquals(true, game.checkWinner());
     }
+
+    @Test
+    public void testChangePlayer() {
+        game.currentPlayerMark = 'X';
+        game.changePlayer();
+        assertEquals('O', game.currentPlayerMark);
+    } 
+
+
 }
