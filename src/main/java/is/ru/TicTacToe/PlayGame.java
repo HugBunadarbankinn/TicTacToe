@@ -3,10 +3,10 @@ package is.ru.TicTacToe;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 public class PlayGame {
     protected GameBoard board = new GameBoard();
-
     private final int [][] MARK = {{1,2,3}, {4,5,6}, {7,8,9}};
     protected char currentPlayerMark;
 
@@ -14,17 +14,16 @@ public class PlayGame {
         currentPlayerMark = 'X';
         board.initializeBoard();
         board.printBoard();
+        board.promptUser(currentPlayerMark);
     }
 
-    public void makePlay() {
-        BufferedReader readInput = new BufferedReader(new InputStreamReader(System.in));
-        int slot = 0;
-        try {
-            String s = readInput.readLine();
-            slot = Integer.valueOf(s);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    public void makeMove() {
+        //BufferedReader readInput = new BufferedReader(new InputStreamReader(System.in));
+        Scanner in = new Scanner(System.in);
+        int slot = 0;      
+        
+        slot = in.nextInt();
+        in.close();
 
         if(!isValidNumber(slot)) {
             System.out.println("Not a valid slot!");
@@ -33,7 +32,7 @@ public class PlayGame {
             makeMark(slot);
             changePlayer();
         }
-
+        board.promptUser(currentPlayerMark);
         board.printBoard();
     }
     
@@ -112,6 +111,30 @@ public class PlayGame {
     void changePlayer()
     {
         currentPlayerMark = (currentPlayerMark == 'X' ? 'O' : 'X');
+    }
+
+    public boolean gameOver() {
+        return (checkWinner() || isFull());
+    }
+
+    public final void playSingleGame()
+    {
+        while (!gameOver())
+        {
+            makeMove();
+        }
+        getWinner();
+    }
+
+
+    public void getWinner() {
+        changePlayer();
+        if(isFull())
+        {
+            board.printWinner("Draw!");
+        }
+        else
+           board.printWinner("Winner is " + currentPlayerMark);
     }
 
 }

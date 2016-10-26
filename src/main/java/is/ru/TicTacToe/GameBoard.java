@@ -28,4 +28,15 @@ public class GameBoard {
             System.out.println("-------------");
         }
     }
+
+    public void promptUser(char player){
+        System.out.println("To play, enter the number");
+        System.out.println("123\n456\n789\non the board.");
+        System.out.println("Player " + player + " move: ");
+    }
+
+    public void printWinner(String win){
+        System.out.println(win);
+    }
+
 }
