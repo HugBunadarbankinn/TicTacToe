@@ -32,6 +32,9 @@ public class GameBoard {
     public void promptUser(char player){
         System.out.println("To play, enter the number");
         System.out.println("123\n456\n789\non the board.");
+    }
+
+    public void promptNextTurn(char player) {
         System.out.println("Player " + player + " move: ");
     }
 

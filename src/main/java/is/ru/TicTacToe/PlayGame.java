@@ -34,7 +34,7 @@ public class PlayGame {
             makeMark(slot);
             changePlayer();
         }
-        board.promptUser(currentPlayerMark);
+        
         board.printBoard();
     }
     
@@ -123,8 +123,10 @@ public class PlayGame {
     {
         while (!gameOver())
         {
+            board.promptNextTurn(currentPlayerMark);
             makeMove();
         }
+
         getWinner();
     }
 
@@ -136,7 +138,7 @@ public class PlayGame {
             board.printWinner("Draw!");
         }
         else
-           board.printWinner("Winner is " + currentPlayerMark);
+           board.printWinner("Winner is " + currentPlayerMark + "!");
     }
 
 }
