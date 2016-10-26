@@ -5,7 +5,7 @@ import java.util.Arrays;
 import org.junit.Test;
 
 public class TicTacToeTest {
-    GameBoard  board =  new GameBoard();
+   //GameBoard  board =  new GameBoard();
     PlayGame game = new PlayGame();
 
 
@@ -22,6 +22,7 @@ public class TicTacToeTest {
         char[] table1 = new char[3];
         char[] table2 = new char[3];
 
+<<<<<<< HEAD
         for(int i = 0; i < 3; i++){
             table0[i] = board.board[0][i];
         } 
@@ -32,6 +33,21 @@ public class TicTacToeTest {
 
         for(int i = 0; i < 3; i++){
             table2[i] = board.board[2][i];
+=======
+        for(int i = 0; i < 3; i++)
+        {
+            table0[i] = game.board.board[0][i];
+        } 
+
+        for(int i = 0; i < 3; i++)
+        {
+            table1[i] = game.board.board[1][i];
+        } 
+
+        for(int i = 0; i < 3; i++)
+        {
+            table2[i] = game.board.board[2][i];
+>>>>>>> origin/CheckWinner
         } 
 
         Arrays.equals(row, table0);
@@ -55,21 +71,52 @@ public class TicTacToeTest {
     }
 
 	@Test
+<<<<<<< HEAD
 	public void testSlotNotFree() {
+=======
+	public void testSlotFree() {
+>>>>>>> origin/CheckWinner
         game.board.board[0][1] = 'X';
 		assertEquals(false, game.isSlotFree(0,1));
 	}
 
+    @Test
+    public void testSlotFree2() {
+        game.board.board[0][1] = '-';
+        assertEquals(true, game.isSlotFree(0,1));
+    }
+
 	@Test
-	public void testCheckWinner() {
-        board.board[0][0] = 'X';
-        board.board[0][1] = 'X';
-        board.board[0][2] = 'X';
-		assertEquals(true, game.checkWinner());
+	public void testCheckWinnerA() {
+        game.board.board[0][0] = 'X';
+        game.board.board[0][1] = 'O';
+        game.board.board[0][2] = 'O';
+		assertEquals(false, game.checkWinner());
 	}
+<<<<<<< HEAD
     @Test
     public void testSlotFree() {
         game.board.board[0][1] = '-';
         assertEquals(true, game.isSlotFree(1,1));
     }   
 }
+=======
+
+    @Test
+    public void testCheckWinnerB() {
+        game.board.board[0][0] = 'O';
+        game.board.board[0][1] = 'O';
+        game.board.board[0][2] = 'O';
+        assertEquals(true, game.checkWinner());
+    }
+
+    @Test
+    public void testCheckWinnerC() {
+        game.board.board[0][0] = 'X';
+        game.board.board[1][1] = 'X';
+        game.board.board[2][2] = 'X';
+        assertEquals(true, game.checkWinner());
+    }
+    
+}
+>>>>>>> origin/CheckWinner
