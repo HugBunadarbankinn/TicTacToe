@@ -53,9 +53,9 @@ public class TicTacToeTest {
     }
 
     @Test
-	public void testTooHighNumber() {
-		assertEquals(false, game.isValidNumber(10));
-	}
+    public void testTooHighNumber() {
+        assertEquals(false, game.isValidNumber(10));
+    }
 
     @Test
     public void testTooLowNumber() {
@@ -67,11 +67,11 @@ public class TicTacToeTest {
         assertEquals(true, game.isValidNumber(5));
     }
 
-	@Test
-	public void testSlotFree1() {
+    @Test
+    public void testSlotFree1() {
         game.board.board[0][1] = 'X';
-		assertEquals(false, game.isSlotFree(0,1));
-	}
+        assertEquals(false, game.isSlotFree(0,1));
+    }
 
     @Test
 
@@ -107,7 +107,7 @@ public class TicTacToeTest {
         assertEquals(true, game.isSlotFree(0,1));
     }
 
-	@Test
+    @Test
     public void testCheckWinnerA() {
         game.board.board[0][0] = 'X';
         game.board.board[0][1] = 'O';
@@ -148,7 +148,6 @@ public class TicTacToeTest {
         assertEquals(mark, game.board.board[1][2]);
     }
     
-    @Test
     public void testChangePlayer() {
         game.currentPlayerMark = 'X';
         game.changePlayer();

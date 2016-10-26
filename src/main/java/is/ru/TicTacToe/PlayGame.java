@@ -3,7 +3,6 @@ package is.ru.TicTacToe;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 public class PlayGame {
     protected GameBoard board = new GameBoard();
@@ -17,13 +16,16 @@ public class PlayGame {
         board.promptUser(currentPlayerMark);
     }
 
+
     public void makeMove() {
-        //BufferedReader readInput = new BufferedReader(new InputStreamReader(System.in));
-        Scanner in = new Scanner(System.in);
-        int slot = 0;      
-        
-        slot = in.nextInt();
-        in.close();
+        BufferedReader readInput = new BufferedReader(new InputStreamReader(System.in));
+        int slot = 0;
+        try {
+            String s = readInput.readLine();
+            slot = Integer.parseInt(s);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         if(!isValidNumber(slot)) {
             System.out.println("Not a valid slot!");
