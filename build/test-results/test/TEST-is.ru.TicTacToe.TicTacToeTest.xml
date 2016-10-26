@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="is.ru.TicTacToe.TicTacToeTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-10-25T18:44:42" hostname="Toshiba" time="0.0">
+<testsuite name="is.ru.TicTacToe.TicTacToeTest" tests="10" skipped="0" failures="0" errors="0" timestamp="2016-10-26T10:24:36" hostname="Notandi-PC" time="0.007">
   <properties/>
+  <testcase name="testCheckWinnerA" classname="is.ru.TicTacToe.TicTacToeTest" time="0.001"/>
+  <testcase name="testCheckWinnerB" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
+  <testcase name="testCheckWinnerC" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
   <testcase name="testBoard" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
   <testcase name="testTooHighNumber" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
   <testcase name="testSlotFree" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
   <testcase name="testSlotNotFree" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
+  <testcase name="testChangePlayer" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
   <testcase name="testTooLowNumber" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
   <testcase name="testValidNumber" classname="is.ru.TicTacToe.TicTacToeTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
