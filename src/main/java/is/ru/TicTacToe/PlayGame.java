@@ -58,7 +58,7 @@ public class PlayGame {
     }
     
     protected boolean isValidNumber(int num){
-        if((num <= 0) || (num > 9) && (num == (int) num)){
+        if((num <= 0) || (num > 9)){
             return false;
         }
         return true;
