@@ -23,9 +23,12 @@ public class PlayGame {
         int slot = 0;
         try {
             String s = readInput.readLine();
-            slot = Integer.parseInt(s);
-        } 
-        catch (IOException e) {
+            try {
+                slot = Integer.parseInt(s);
+            } catch(NumberFormatException e) {
+                System.out.println("Not a valid slot");
+            }
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -113,7 +116,8 @@ public class PlayGame {
         return false;
     }
 
-    void changePlayer() {
+    protected void changePlayer()
+    {
         currentPlayerMark = (currentPlayerMark == 'X' ? 'O' : 'X');
     }
 
