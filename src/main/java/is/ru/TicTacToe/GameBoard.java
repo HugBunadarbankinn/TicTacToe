@@ -8,18 +8,18 @@
  *  - ### initializeBoard:
  *  The board should be of desired size, usually 3*3 grid.
  *  All indexes are empty, represented with a symbol ('-').
- *  - ### printBoard
- *  - ### promptUser(char player)
- *  - ### promptNextTurn(char player)
- *  - ### printWinner(String win)
- *  - third item
- *
- * This is a text that contains an [external link][link].
- *
- * [link]: http://external-link.com/
- *
- * @param id the user id
- * @return the user object with the passed `id` or `null` if no user with this `id` is found
+ *  - ### printBoard:
+ *  Prints out the board in it's current state, in the beginning
+ *  and after each turn.
+ *  - ### promptUser:
+ *  In the beginning og each game, prints out instructions on what to input.
+ *  - ### promptNextTurn(char player):
+ *  @param player , either X or O
+ *  @return Player X move: / Player O move:
+ *  Called on by the 'playSingleGame' function in PlayGame.java
+ *  - ### printWinner(String win):
+ *  @param win Draw! / "Winner is " + currentPlayerMark + "!"
+ *  Called on by the 'getWinner' function in PlayGame.java.
  */
 package is.ru.TicTacToe;
 

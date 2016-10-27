@@ -5,21 +5,13 @@
  *
  * List Of Tests:
  *
- *  - testBoard
- *  - testTooHighNumber
- *  - testTooLowNumber
- *  - testValidNumber
- *  - testIsFull
- *  - testIsNotFull
- *  - testSlotFree
- *  - testSlotFree1
- *  - testSlotFree2
- *  - testCheckWinnerA
- *  - testCheckWinnerB
- *  - testCheckWinnerC
- *  - testMakeMark
- *  - testMakeMark2
- *  - testChangePlayer
+ *  - test for initializeBoard
+ *  - tests for isValidNumber: must be in range 1-9
+ *  - tests for isFull: all indexes have other marks than ('-')
+ *  - tests for isSlotFree: index has mark ('-')
+ *  - tests for checkWinner
+ *  - tests for makeMark: has the mark changed from ('-') to ('X' or 'O')
+ *  - test for changePlayer
  */
 package is.ru.TicTacToe;
 
