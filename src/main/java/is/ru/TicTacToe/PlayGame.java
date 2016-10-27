@@ -57,7 +57,6 @@
  * 
  */
 package is.ru.TicTacToe;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -67,11 +66,13 @@ public class PlayGame {
     private final int [][] MARK = {{1,2,3}, {4,5,6}, {7,8,9}};
     protected char currentPlayerMark;
 
+
+
     public PlayGame() {
         currentPlayerMark = 'X';
         board.initializeBoard();
         board.printBoard();
-        board.promptUser(currentPlayerMark);
+        board.promptUser();
     }
 
 
@@ -80,7 +81,11 @@ public class PlayGame {
         int slot = 0;
         try {
             String s = readInput.readLine();
-            slot = Integer.parseInt(s);
+            try {
+                slot = Integer.parseInt(s);
+            } catch(NumberFormatException e) {
+                System.out.println("Not a valid slot");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -96,60 +101,63 @@ public class PlayGame {
         board.printBoard();
     }
     
-    protected void makeMark(int slot){
-        for (int col = 0; col < 3; col++){
-            for (int row = 0; row < 3; row++){
-                if(slot == MARK[col][row]){
-                    if(isSlotFree(col,row)){
+    protected void makeMark(int slot) {
+        for (int col = 0; col < board.boardSize; col++) {
+            for (int row = 0; row < board.boardSize; row++) {
+                if(slot == MARK[col][row]) {
+                    if(isSlotFree(col,row)) {
                         board.board[col][row] = currentPlayerMark;
                     }
                     else {
                         System.out.println("Slot is not free");
+                        BufferedReader readInput = new BufferedReader(new InputStreamReader(System.in));
+                        
+                        try {
+                            String s = readInput.readLine();
+                            slot = Integer.parseInt(s);
+                        } 
+                        catch (IOException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
         }
     }
     
-    protected boolean isValidNumber(int num){
-        if(num <= 0 || num > 9 ){
+    protected boolean isValidNumber(int num) {
+        if(num <= 0 || num > (board.boardSize * board.boardSize) ) {
             return false;
         }
         return true;
     }
-    protected boolean isSlotFree(int col, int row){
+    protected boolean isSlotFree(int col, int row) {
         if(board.board[col][row] == 'X' || board.board[col][row] == 'O') {
             return false;
         }
         return true;
     }
 
-    protected boolean checkWinner()
-    {
-        for(int i = 0; i < 3; i++)
-        {
-            if(checkLine(board.board[i][0], board.board[i][1], board.board[i][2]) == true)
-            {
+    protected boolean checkWinner() {
+        for(int i = 0; i < board.boardSize; i++) {
+            if(checkLine(board.board[i][0], board.board[i][1], board.board[i][2]) == true) {
                 return true;
             }
-            else if(checkLine(board.board[0][i], board.board[1][i], board.board[2][i]) == true)
-            {
+            else if(checkLine(board.board[0][i], board.board[1][i], board.board[2][i]) == true) {
                 return true;
             }
             else if((checkLine(board.board[0][0], board.board[1][1], board.board[2][2]) == true) ||
-                    (checkLine(board.board[0][2], board.board[1][1], board.board[2][0]) == true))
-            {
+                    (checkLine(board.board[0][2], board.board[1][1], board.board[2][0]) == true)) {
                 return true;
             }
         }
         return false;
     }
 
-    protected boolean isFull()
-    {
+    protected boolean isFull() {
         if((board.board[0][0] == '-') || (board.board[0][1] == '-') || (board.board[0][2] == '-') ||
            (board.board[1][0] == '-') || (board.board[1][1] == '-') || (board.board[1][2] == '-') ||
-           (board.board[2][0] == '-') || (board.board[2][1] == '-') || (board.board[2][2] == '-')){
+           (board.board[2][0] == '-') || (board.board[2][1] == '-') || (board.board[2][2] == '-')) {
             return false;
         }
 
@@ -157,18 +165,16 @@ public class PlayGame {
     }
 
 
-    protected boolean checkLine(char a, char b, char c)
-    {
+    protected boolean checkLine(char a, char b, char c) {
         if ((a == '-') || (b == '-') || (c == '-'))
             return false;
         else if((a == b) && (b == c))
             return true;
 
-
         return false;
     }
 
-    void changePlayer()
+    protected void changePlayer()
     {
         currentPlayerMark = (currentPlayerMark == 'X' ? 'O' : 'X');
     }
@@ -177,10 +183,8 @@ public class PlayGame {
         return (checkWinner() || isFull());
     }
 
-    public final void playSingleGame()
-    {
-        while (!gameOver())
-        {
+    public final void playSingleGame() {
+        while (!gameOver()) {
             board.promptNextTurn(currentPlayerMark);
             makeMove();
         }
@@ -191,12 +195,13 @@ public class PlayGame {
 
     public void getWinner() {
         changePlayer();
-        if(isFull())
-        {
+        
+        if(checkWinner()) {
+            board.printWinner("Winner is " + currentPlayerMark + "!");
+        }
+        else if(isFull()) {
             board.printWinner("Draw!");
         }
-        else
-           board.printWinner("Winner is " + currentPlayerMark + "!");
     }
 
 }
