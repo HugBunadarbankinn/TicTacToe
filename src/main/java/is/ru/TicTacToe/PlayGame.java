@@ -50,6 +50,7 @@ public class PlayGame {
                     else {
                         System.out.println("Slot is not free");
                         BufferedReader readInput = new BufferedReader(new InputStreamReader(System.in));
+                        
                         try {
                             String s = readInput.readLine();
                             slot = Integer.parseInt(s);
@@ -76,10 +77,8 @@ public class PlayGame {
         return true;
     }
 
-    protected boolean checkWinner()
-    {
-        for(int i = 0; i < board.boardSize; i++)
-        {
+    protected boolean checkWinner() {
+        for(int i = 0; i < board.boardSize; i++) {
             if(checkLine(board.board[i][0], board.board[i][1], board.board[i][2]) == true) {
                 return true;
             }
@@ -97,7 +96,7 @@ public class PlayGame {
     protected boolean isFull() {
         if((board.board[0][0] == '-') || (board.board[0][1] == '-') || (board.board[0][2] == '-') ||
            (board.board[1][0] == '-') || (board.board[1][1] == '-') || (board.board[1][2] == '-') ||
-           (board.board[2][0] == '-') || (board.board[2][1] == '-') || (board.board[2][2] == '-')){
+           (board.board[2][0] == '-') || (board.board[2][1] == '-') || (board.board[2][2] == '-')) {
             return false;
         }
 
@@ -110,7 +109,6 @@ public class PlayGame {
             return false;
         else if((a == b) && (b == c))
             return true;
-
 
         return false;
     }
@@ -135,6 +133,7 @@ public class PlayGame {
 
     public void getWinner() {
         changePlayer();
+        
         if(checkWinner()) {
             board.printWinner("Winner is " + currentPlayerMark + "!");
         }
