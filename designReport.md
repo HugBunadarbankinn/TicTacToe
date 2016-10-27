@@ -19,7 +19,6 @@ Other tools we are using are:
 * Heroku
 * Selenium
 
-##Design##
 
 ##Class Diagram##
 The class diagram below is how we started out our project and we thought our diagram would look like.
