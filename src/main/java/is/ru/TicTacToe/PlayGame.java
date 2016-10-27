@@ -47,6 +47,13 @@ public class PlayGame {
                     }
                     else {
                         System.out.println("Slot is not free");
+                        BufferedReader readInput = new BufferedReader(new InputStreamReader(System.in));
+                        try {
+                            String s = readInput.readLine();
+                            slot = Integer.parseInt(s);
+                        } catch (IOException e) {
+                        e.printStackTrace();
+                        }
                     }
                 }
             }
@@ -133,12 +140,14 @@ public class PlayGame {
 
     public void getWinner() {
         changePlayer();
-        if(isFull())
+        if(checkWinner())
+        {
+            board.printWinner("Winner is " + currentPlayerMark + "!");
+        }
+        else if(isFull())
         {
             board.printWinner("Draw!");
         }
-        else
-           board.printWinner("Winner is " + currentPlayerMark + "!");
     }
 
 }
