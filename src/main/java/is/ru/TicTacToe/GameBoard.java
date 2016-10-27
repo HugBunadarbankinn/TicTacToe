@@ -2,26 +2,22 @@ package is.ru.TicTacToe;
 
 
 public class GameBoard {
-    protected char[][] board = new char[3][3];
+    protected final int boardSize = 3;
+    protected char[][] board = new char[boardSize][boardSize];
 
     public void initializeBoard() {
-        for(int i = 0; i < 3; i++)
-        {
-            for(int j = 0; j < 3; j++)
-            {
+        for(int i = 0; i < boardSize; i++) {
+            for(int j = 0; j < boardSize; j++) {
                 board[i][j] = '-';
             }
         }
     }
 
-    public void printBoard()
-    {
+    public void printBoard() {
         System.out.println("-------------");
-        for(int i = 0; i < 3; i++)
-        {
+        for(int i = 0; i < boardSize; i++) {
             System.out.print("| ");
-            for(int j = 0; j < 3; j++)
-            {
+            for(int j = 0; j < boardSize; j++) {
                 System.out.print(board[i][j] + " | ");
             }
             System.out.println();
@@ -29,7 +25,7 @@ public class GameBoard {
         }
     }
 
-    public void promptUser(char player){
+    public void promptUser() {
         System.out.println("To play, enter the number");
         System.out.println("123\n456\n789\non the board.");
     }
@@ -38,7 +34,7 @@ public class GameBoard {
         System.out.println("Player " + player + " move: ");
     }
 
-    public void printWinner(String win){
+    public void printWinner(String win) {
         System.out.println(win);
     }
 
