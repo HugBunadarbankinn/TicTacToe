@@ -21,7 +21,7 @@ Other tools we are using are:
 
 ##Design##
 
-**Class Diagram**
+##Class Diagram##
 The class diagram below is how we started out our project and we thought our diagram would look like.
 ![diagram1] (https://github.com/HugBunadarbankinn/TicTacToe/blob/master/documentation/classDiagram.jpg)
 
