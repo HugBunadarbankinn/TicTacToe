@@ -22,7 +22,11 @@ public class PlayGame {
         int slot = 0;
         try {
             String s = readInput.readLine();
-            slot = Integer.parseInt(s);
+            try {
+                slot = Integer.parseInt(s);
+            } catch(NumberFormatException e) {
+                System.out.println("Not a valid slot");
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -54,7 +58,7 @@ public class PlayGame {
     }
     
     protected boolean isValidNumber(int num){
-        if(num <= 0 || num > 9 ){
+        if((num <= 0) || (num > 9) && (num == (int) num)){
             return false;
         }
         return true;
@@ -110,7 +114,7 @@ public class PlayGame {
         return false;
     }
 
-    void changePlayer()
+    protected void changePlayer()
     {
         currentPlayerMark = (currentPlayerMark == 'X' ? 'O' : 'X');
     }
