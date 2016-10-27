@@ -7,4 +7,3 @@ What is needed to get the project to run on a fresh machine.
 * The code is written in java language so [Java JDK 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html) has to be installed.
 * [Gradle 3.1](https://gradle.org/gradle-download/) is used to build and run the game.
 * We used Automated Continuous Integration Server, e.g. [Travis](https://github.com/travis-ci/travis.rb).
-* [Selenium](http://docs.seleniumhq.org/) is used to perform web tests.
