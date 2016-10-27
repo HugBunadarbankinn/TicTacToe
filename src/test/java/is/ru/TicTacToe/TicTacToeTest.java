@@ -1,3 +1,26 @@
+/**
+ * ## TicTacToeTest.java
+ * ### Unit Tests
+ * @author: HugBúnaðarbankinn
+ *
+ * List Of Tests:
+ *
+ *  - testBoard
+ *  - testTooHighNumber
+ *  - testTooLowNumber
+ *  - testValidNumber
+ *  - testIsFull
+ *  - testIsNotFull
+ *  - testSlotFree
+ *  - testSlotFree1
+ *  - testSlotFree2
+ *  - testCheckWinnerA
+ *  - testCheckWinnerB
+ *  - testCheckWinnerC
+ *  - testMakeMark
+ *  - testMakeMark2
+ *  - testChangePlayer
+ */
 package is.ru.TicTacToe;
 
 import static org.junit.Assert.assertEquals;
@@ -6,7 +29,6 @@ import org.junit.Test;
 
 public class TicTacToeTest {
     PlayGame game = new PlayGame();
-
 
     @Test 
     public void testBoard(){
@@ -68,12 +90,6 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void testSlotFree1() {
-        game.board.board[0][1] = 'X';
-        assertEquals(false, game.isSlotFree(0,1));
-    }
-
-    @Test
 
     public void testIsFull() {
         for (int i = 0; i < 3; i++){
@@ -100,7 +116,13 @@ public class TicTacToeTest {
     public void testSlotFree() {
         game.board.board[0][1] = '-';
         assertEquals(true, game.isSlotFree(1,1));
-    }  
+    } 
+
+    @Test
+    public void testSlotFree1() {
+        game.board.board[0][1] = 'X';
+        assertEquals(false, game.isSlotFree(0,1));
+    } 
 
     public void testSlotFree2() {
         game.board.board[0][1] = '-';
@@ -132,7 +154,7 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void testMakeMark(){
+    public void testMakeMark() {
         char mark = game.currentPlayerMark;
         game.makeMark(3);
 
@@ -140,7 +162,7 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void testMakeMark2(){
+    public void testMakeMark2() {
         game.changePlayer();
         char mark = game.currentPlayerMark;
         game.makeMark(6);

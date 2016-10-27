@@ -1,3 +1,26 @@
+/**
+ * ## GameBoard.java
+ * ### Interface Class that handles prompts and printouts
+ * @author: HugBúnaðarbankinn
+ *
+ * List Of Functions:
+ *
+ *  - ### initializeBoard:
+ *  The board should be of desired size, usually 3*3 grid.
+ *  All indexes are empty, represented with a symbol ('-').
+ *  - ### printBoard
+ *  - ### promptUser(char player)
+ *  - ### promptNextTurn(char player)
+ *  - ### printWinner(String win)
+ *  - third item
+ *
+ * This is a text that contains an [external link][link].
+ *
+ * [link]: http://external-link.com/
+ *
+ * @param id the user id
+ * @return the user object with the passed `id` or `null` if no user with this `id` is found
+ */
 package is.ru.TicTacToe;
 
 
