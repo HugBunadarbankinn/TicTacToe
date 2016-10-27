@@ -6,43 +6,44 @@ import org.junit.Test;
 
 public class TicTacToeTest {
     PlayGame game = new PlayGame();
+    GameBoard testBoard = new GameBoard();
 
 
     @Test 
-    public void testBoard(){
+    public void testBoard() {
 
-        char[] row = new char[3];
+        char[] row = new char[testBoard.boardSize];
 
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < testBoard.boardSize; i++) {
             row[i] = '-';
         } 
 
-        char[] table0 = new char[3];
-        char[] table1 = new char[3];
-        char[] table2 = new char[3];
+        char[] table0 = new char[testBoard.boardSize];
+        char[] table1 = new char[testBoard.boardSize];
+        char[] table2 = new char[testBoard.boardSize];
 
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < testBoard.boardSize; i++) {
             table0[i] = game.board.board[0][i];
         } 
 
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < testBoard.boardSize; i++) {
             table1[i] = game.board.board[1][i];
         } 
 
-        for(int i = 0; i < 3; i++){
+        for(int i = 0; i < testBoard.boardSize; i++) {
             table2[i] = game.board.board[2][i];
         }
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < testBoard.boardSize; i++)
         {
             table0[i] = game.board.board[0][i];
         } 
 
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < testBoard.boardSize; i++)
         {
             table1[i] = game.board.board[1][i];
         } 
 
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < testBoard.boardSize; i++)
         {
             table2[i] = game.board.board[2][i];
         } 
@@ -76,8 +77,8 @@ public class TicTacToeTest {
     @Test
 
     public void testIsFull() {
-        for (int i = 0; i < 3; i++){
-            for(int j = 0; j < 3; j++){
+        for (int i = 0; i < testBoard.boardSize; i++) {
+            for(int j = 0; j < testBoard.boardSize; j++) {
                 game.board.board[i][j] = 'X';
             }
         }
@@ -86,8 +87,8 @@ public class TicTacToeTest {
 
     @Test
     public void testIsNotFull() {
-        for (int i = 0; i < 3; i++){
-            for(int j = 0; j < 3; j++){
+        for (int i = 0; i < testBoard.boardSize; i++) {
+            for(int j = 0; j < testBoard.boardSize; j++) {
                 game.board.board[i][j] = '-';
             }
         }
@@ -132,7 +133,7 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void testMakeMark(){
+    public void testMakeMark() {
         char mark = game.currentPlayerMark;
         game.makeMark(3);
 
@@ -140,7 +141,7 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void testMakeMark2(){
+    public void testMakeMark2() {
         game.changePlayer();
         char mark = game.currentPlayerMark;
         game.makeMark(6);
