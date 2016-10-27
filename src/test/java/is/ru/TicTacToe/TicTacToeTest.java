@@ -3,7 +3,7 @@
  * ### Unit Tests
  * @author: HugBúnaðarbankinn
  *
- * List Of Tests:
+ * ###List Of Tests:
  *
  *  - test for initializeBoard
  *  - tests for isValidNumber: must be in range 1-9

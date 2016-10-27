@@ -1,25 +1,33 @@
-/**
+ /**
  * ## GameBoard.java
  * ### Interface Class that handles prompts and printouts
  * @author: HugBúnaðarbankinn
- *
- * List Of Functions:
- *
- *  - ### initializeBoard:
- *  The board should be of desired size, usually 3*3 grid.
- *  All indexes are empty, represented with a symbol ('-').
- *  - ### printBoard:
- *  Prints out the board in it's current state, in the beginning
+ *  
+ * ###List Of Functions:
+ * 
+ *   -   **initializeBoard:**
+ * > The board should be of desired size, usually 3*3 grid.
+ * All indexes are empty, represented with a symbol ('-').
+ * 
+ *  -   **printBoard:**
+ * > Prints out the board in it's current state, in the beginning
  *  and after each turn.
- *  - ### promptUser:
- *  In the beginning og each game, prints out instructions on what to input.
- *  - ### promptNextTurn(char player):
+ * 
+ *  -  **promptUser:**
+ *  > In the beginning og each game, prints out instructions on what to input.
+ * 
+ *  -  **promptNextTurn(char player):**
  *  @param player , either X or O
+ *  
  *  @return Player X move: / Player O move:
- *  Called on by the 'playSingleGame' function in PlayGame.java
- *  - ### printWinner(String win):
+ * 
+ *  >Called on by the 'playSingleGame' function in PlayGame.java.
+ * 
+ *  -  **printWinner(String win):**
  *  @param win Draw! / "Winner is " + currentPlayerMark + "!"
- *  Called on by the 'getWinner' function in PlayGame.java.
+ * 
+ *  >Called on by the 'getWinner' function in PlayGame.java.
+ * 
  */
 package is.ru.TicTacToe;
 
