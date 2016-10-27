@@ -1,3 +1,13 @@
+buildscript {
+    repositories {
+        mavenCentral() // or jcenter()
+    }
+    dependencies {
+        classpath 'ch.raffael.pegdown-doclet:pegdown-doclet:1.2'
+    }
+}
+
+apply plugin: 'ch.raffael.pegdown-doclet'
 apply plugin: 'java'
 apply plugin: 'application'
 
@@ -14,6 +24,10 @@ dependencies {
 
     compile 'net.joningi:icndb-java-api:1.0'
     compile 'com.sparkjava:spark-core:2.5'
+}
+
+task myJavadocs(type: Javadoc) {
+  source = sourceSets.main.allJava
 }
 
 task stage {

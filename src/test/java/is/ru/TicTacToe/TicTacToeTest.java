@@ -1,3 +1,18 @@
+/**
+ * ## TicTacToeTest.java
+ * ### Unit Tests
+ * @author: HugBúnaðarbankinn
+ *
+ * ###List Of Tests:
+ *
+ *  - test for initializeBoard
+ *  - tests for isValidNumber: must be in range 1-9
+ *  - tests for isFull: all indexes have other marks than ('-')
+ *  - tests for isSlotFree: index has mark ('-')
+ *  - tests for checkWinner
+ *  - tests for makeMark: has the mark changed from ('-') to ('X' or 'O')
+ *  - test for changePlayer
+ */
 package is.ru.TicTacToe;
 
 import static org.junit.Assert.assertEquals;
@@ -7,7 +22,6 @@ import org.junit.Test;
 public class TicTacToeTest {
     PlayGame game = new PlayGame();
     GameBoard testBoard = new GameBoard();
-
 
     @Test 
     public void testBoard() {
@@ -69,12 +83,6 @@ public class TicTacToeTest {
     }
 
     @Test
-    public void testSlotFree1() {
-        game.board.board[0][1] = 'X';
-        assertEquals(false, game.isSlotFree(0,1));
-    }
-
-    @Test
 
     public void testIsFull() {
         for (int i = 0; i < testBoard.boardSize; i++) {
@@ -101,7 +109,13 @@ public class TicTacToeTest {
     public void testSlotFree() {
         game.board.board[0][1] = '-';
         assertEquals(true, game.isSlotFree(1,1));
-    }  
+    } 
+
+    @Test
+    public void testSlotFree1() {
+        game.board.board[0][1] = 'X';
+        assertEquals(false, game.isSlotFree(0,1));
+    } 
 
     public void testSlotFree2() {
         game.board.board[0][1] = '-';

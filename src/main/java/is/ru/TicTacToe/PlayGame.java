@@ -1,3 +1,61 @@
+ /**
+ * ## PlayGame.java
+ * ### Buissness class that handles all logic
+ * @author: HugBúnaðarbankinn
+ *    
+ * ###The constructor:
+ * - initializes the board
+ * - sets Player 1(X)
+ * - prints the board and prompts user
+ *  
+ * ###List Of Functions:
+ * 
+ * -   **makeMove:**
+ * > Reads input from the user and checks if it's valid. 
+ *   Calls the 'makeMark' function and the 'changePlayer' function.
+ *   
+ * -   **makeMark(int slot):**
+ * > Adds the current player's mark on a given location on the board. The state of the board is updated.
+ * @param slot range 1-9
+ *   
+ * -  **isValidNumber(int num):**
+ * @param num input from user   
+ * @return 'true' if num is in range 1-9 and the slot is free, else 'false'
+ *    
+ * -  **isSlotFree(int row, int col):**
+ * @param row&col
+ * @return 'true' if free, else 'false'
+ *   
+ * >Checks if the given index has the mark ('-')
+ *   
+ * -  **checkWinner:**
+ * > Calls the 'checkLine' function for all rows including the angled ones
+ * to check if there is a 3 in a row pattern.
+ * Returns true if 'checkLine' turns true for any of it's checks.
+ *  
+ * -  **isFull:**
+ * > Returns 'false' if any slot contains the mark ('-'), else return 'true'.
+ *   
+ * -  **checkLine:**
+ * > Returns true if checked indexes have the same mark.
+ *    
+ * -  **changePlayer:**
+ * > Called after each turn, changes current player mark between X's and O's.
+ *  
+ *  -  **gameOver:**
+ * > Returns true if either 'isFull' or 'checkWinner' turns true.
+ * Used in the 'playSingleGame' function.
+ *  
+ * -  **playSingleGame:**
+ * > While the game is not over this function prints out the board, switches between
+ * players letting them make their mark. After each mark the board is printed out.
+ * 
+ * -  **getWinner:**
+ * > Decides what string to send into the printWinner function in the interface class
+ * depending on if the board is full or if there's a winner. 
+ *
+ * 
+ */
 package is.ru.TicTacToe;
 import java.io.BufferedReader;
 import java.io.IOException;
