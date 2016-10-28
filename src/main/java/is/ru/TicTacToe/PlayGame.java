@@ -83,6 +83,7 @@ public class PlayGame {
             String s = readInput.readLine();
             try {
                 slot = Integer.parseInt(s);
+                
             } catch(NumberFormatException e) {
                 System.out.println("Not a valid slot");
             }
@@ -111,7 +112,6 @@ public class PlayGame {
                     else {
                         System.out.println("Slot is not free");
                         BufferedReader readInput = new BufferedReader(new InputStreamReader(System.in));
-                        
                         try {
                             String s = readInput.readLine();
                             slot = Integer.parseInt(s);
