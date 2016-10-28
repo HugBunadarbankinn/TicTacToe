@@ -96,7 +96,6 @@ public class PlayGame {
         }
         else {
             makeMark(slot);
-            changePlayer();
         }
         
         board.printBoard();
@@ -108,17 +107,11 @@ public class PlayGame {
                 if(slot == MARK[col][row]) {
                     if(isSlotFree(col,row)) {
                         board.board[col][row] = currentPlayerMark;
+                        changePlayer();
                     }
                     else {
                         System.out.println("Slot is not free");
-                        BufferedReader readInput = new BufferedReader(new InputStreamReader(System.in));
-                        try {
-                            String s = readInput.readLine();
-                            slot = Integer.parseInt(s);
-                        } 
-                        catch (IOException e) {
-                            e.printStackTrace();
-                        }
+                        makeMove();
                     }
                 }
             }
