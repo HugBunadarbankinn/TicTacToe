@@ -2,7 +2,7 @@
 
 Describes how to deploy and run TicTacToe.
 
-A downloadable zip file containing the project can be found her - [TicTacToe](www.github.com/hugbunadarbankinn/tictactoe/archive/master.zip)
+A downloadable zip file containing the project can be found here - [TicTacToe](www.github.com/hugbunadarbankinn/tictactoe/archive/master.zip)
 
 # Server deployment #
 
