@@ -11,14 +11,11 @@
 * Sandra Ósk Bender
 
 ##Introduction##
-This design report is a part of an assignment in a class at Reykjavík University called Software Architecture. 
+This design report is a part of an assignment in a class at Reykjavík University called Software Engineering. 
 We are developing the well known console game TicTacToe and we will be using a Test-driven development (TDD) as well as GitHub (source control system) to store the code.
 Other tools we are using are:
 * Travis
 * Gradle
-* Heroku
-* Selenium
-
 
 ##Class Diagram##
 The class diagram below is how we started out our project and we thought our diagram would look like.
